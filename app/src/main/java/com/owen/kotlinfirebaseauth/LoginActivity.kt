@@ -27,6 +27,26 @@ class LoginActivity : AppCompatActivity() {
     }
      private fun login()
     {
+          val emailIds = findViewById<View>( R.id.etName) as EditText
+        val passwordIDs = findViewById<View>(R.id.etPassWord) as EditText
+
+        val emailCollection = emailIds.text.toString()
+        val passwordColection = passwordIDs.text.toString()
+
+        if(!emailCollection.isEmpty() && (passwordColection.isEmpty()))
+        {
+            mAuth.signInWithEmailAndPassword(emailCollection, passwordColection).addOnCompleteListener(this, OnCompleteListener { 
+                task ->
+                if (task.isSuccessful)
+                {
+                    startActivity(Intent(this, MainActivity :: class.java))
+                }
+            })
+        }
+        else
+        {
+            Toast.makeText(this, "Enter Password", Toast.LENGTH_LONG).show()
+        }
 
     }
 }
