@@ -20,7 +20,7 @@ class Timeline : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_timeline)
+        setContentView(R.layout.activity_main)
 
         val nameTxt = findViewById<View>(R.id.dispTxt) as TextView
 
