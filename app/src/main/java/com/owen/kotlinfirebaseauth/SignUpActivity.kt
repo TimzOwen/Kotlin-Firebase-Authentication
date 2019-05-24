@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.View
 
 class SignUpActivity : AppCompatActivity() {
+    
+    val mAuth = FirebaseAuth.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,5 +28,24 @@ class SignUpActivity : AppCompatActivity() {
         val email = userEmail.text.toString()
         val name = userName.text.toString()
         val password = userPassword.text.toString()
+        
+         if (!email.isEmpty() && !name.isEmpty() && !password.isEmpty())
+        {
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, OnCompleteListener {
+                task ->
+                if (task.isSuccessful)
+                {
+                    
+                }
+                else
+                {
+                    Toast.makeText(this,"Error Registering you, please try again",Toast.LENGTH_SHORT).show()
+                }
+            })
+        }
+        else
+        {
+            Toast.makeText(this, "Enter correct credentials", Toast.LENGTH_SHORT).show()
+        }
     }
 }
