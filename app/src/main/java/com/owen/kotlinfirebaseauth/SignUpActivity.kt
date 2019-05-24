@@ -35,10 +35,11 @@ class SignUpActivity : AppCompatActivity() {
                 task ->
                 if (task.isSuccessful)
                 {
-                    
+                    //register user to firebase
                 }
                 else
                 {
+                    //prompt a tost error
                     Toast.makeText(this,"Error Registering you, please try again",Toast.LENGTH_SHORT).show()
                 }
             })
