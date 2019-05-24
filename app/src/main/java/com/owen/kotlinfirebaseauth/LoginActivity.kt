@@ -40,6 +40,13 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful)
                 {
                     startActivity(Intent(this, MainActivity :: class.java))
+                     Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
+                }
+                else
+                {
+                    Toast.makeText(this, "Error Please try again", Toast.LENGTH_SHORT).show()
+                }
+            })
                 }
             })
         }
