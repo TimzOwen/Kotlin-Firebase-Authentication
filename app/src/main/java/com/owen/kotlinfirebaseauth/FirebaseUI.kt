@@ -48,3 +48,15 @@ AuthUI.getInstance()
             // ...
         }
 
+//privay mehdoes
+startActivityForResult(
+        AuthUI.getInstance()
+                .createSignInIntentBuilder()
+                .setAvailableProviders(providers)
+                .setTosAndPrivacyPolicyUrls(
+                        "https://example.com/terms.html",
+                        "https://example.com/privacy.html")
+                .build(),
+        RC_SIGN_IN)
+
+
