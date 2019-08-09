@@ -33,3 +33,18 @@ startActivityForResult(
         }
     }
 }
+
+//Signoiut
+AuthUI.getInstance()
+        .signOut(this)
+        .addOnCompleteListener {
+            // ...
+        }
+
+//add a listner 
+AuthUI.getInstance()
+        .delete(this)
+        .addOnCompleteListener {
+            // ...
+        }
+
